@@ -16,7 +16,7 @@ export default {
   data () {
     return {
       fileList: ['1', '2'],
-      aaaaaa1: '123'
+      currentPath: ''
     }
   },
   mounted () {
@@ -41,7 +41,7 @@ export default {
     // }, 2000)
     // console.log(this)
     // console.log(this.list)
-    axios.get('http://localhost:9500/home/getProfile', {
+    axios.get('http://192.168.101.10:9500/home/getProfile', {
       params: {
         id: this.$route.name
       }
@@ -52,6 +52,7 @@ export default {
       // console.log(this.list)
       // console.log(this.fileList)
       this.fileList = response.data.data
+      this.currentPath = this.fileList[0].path
       console.log(this.fileList)
     }).catch((error) => {
       console.log(error)

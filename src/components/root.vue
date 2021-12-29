@@ -41,7 +41,7 @@ export default {
     // }, 2000)
     // console.log(this)
     // console.log(this.list)
-    axios.get('http://192.168.101.10:9500/home/getProfile', {
+    axios.get('/home/getProfile', {
       params: {
         id: this.$route.name
       }

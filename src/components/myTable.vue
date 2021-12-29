@@ -76,7 +76,7 @@ export default {
       }
       let path = row.path + '/' + row.name
       // console.log(path)
-      axios.get('http://192.168.101.10:9500/home/getProfile', {
+      axios.get('/home/getProfile', {
         params: {
           id: this.$route.name,
           path: path
@@ -98,7 +98,7 @@ export default {
         return undefined
       }
       let path = row.path + '/' + row.name
-      window.open('http://192.168.101.10:9500/home/download?id=' + this.$route.name + '&path=' + path)
+      window.open('/home/download?id=' + this.$route.name + '&path=' + path)
       // axios.get('http://localhost:9500/home/download', {
       //   params: {
       //     id: this.$route.name,
@@ -124,7 +124,7 @@ export default {
       formData.append('files', e.target.files[0])
       formData.append('data', data) // 上传文件的同时， 也可以上传其他数据
       // let url = this.$store.state.path + 'api/tools/handle_upload_file'
-      let url = 'http://192.168.101.10:9500/home/upload'
+      let url = '/home/upload'
       let config = {
         headers: {'Content-Type': 'multipart/form-data'}
       }

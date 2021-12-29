@@ -10,7 +10,18 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/home': {
+        target: 'http://localhost:9500'
+      },
+      '/': {
+        target: 'http://localhost:9500'
+      },
+      onProxyReq: function (proxyReq, req, res) {
+        //实在不知道代理后的路径，可以在这里打印出出来看看
+        console.log("原路径：" + req.originalUrl, "代理路径：" + req.path)
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

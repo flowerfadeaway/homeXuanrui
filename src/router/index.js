@@ -8,7 +8,7 @@ import ruirui from '../components/ruirui'
 Vue.use(Router)
 
 export default new Router({
-  base: '/home-xuanrui/',
+  // base: '/home-xuanrui/',
   mode: 'history',
   routes: [
     {
